@@ -92,7 +92,7 @@ class BinarySearchTree:
 	def post_order_dft(self, node):
 		pass
 
-f = BinarySearchTree(5)
+f = BinarySearchTree(15)
 
 f.insert(2)
 f.insert(3)
@@ -101,16 +101,20 @@ f.insert(6)
 f.insert(12)
 f.insert(17)
 f.insert(21)
-# f.insert(22)
+f.insert(22)
 f.insert(45)
 f.insert(46)
 f.insert(19)
 f.insert(28)
+f.insert(18)
+f.insert(43)
+f.insert(34)
 
 # print(f.contains(17))
 # print(f.contains(28))
 f.contains(2)
 f.contains(3)
 f.contains(8)
-f.contains(27)
+f.contains(34)
+f.contains(33)
 # print(f.contains(46))
