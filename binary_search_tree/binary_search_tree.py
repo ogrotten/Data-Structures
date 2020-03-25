@@ -32,32 +32,35 @@ class BinarySearchTree:
 	# Return True if the tree contains the value
 	# False if it does not
 	def contains(self, target):
-		if self.value is None:
-			print(36, False, target, end="\n\n")
-			return False
-		elif self.value == target:
+		if self.value == target:
 			print(39, True, target, end="\n\n")
 			return True
-		else:
-			if target < self.value:
-				print("left at", self.value)
-				if self.left:
-					self.left.contains(target)
-				else:
-					print(47, False, target, end="\n\n")
-					return False
-			else:
-				print("right at", self.value)
-				if self.right:
-					self.right.contains(target)
-				else:
-					print(54, False, target, end="\n\n")
-					return False
 
+		elif target < self.value:
+			if self.left:
+				print("left at", self.value, end=", ")
+				return self.left.contains(target)
+			else:
+				print(44, self.value, target, end="\n End.\n\n")
+				return False
+
+		elif target > self.value:
+			if self.right:
+				print("right at", self.value, end=", ")
+				return self.right.contains(target)
+			else:
+				print(52, self.value, target, end="\n End.\n\n")
+				return False
+		else:
+			print(56, self.value, target, end="\n End.\n\n")
+			return False
+		print("should never get here.")
 
 	# Return the maximum value found in the tree
 	def get_max(self):
-		pass
+		if not self.right:
+			return self.value
+		return self.right.get_max()
 
 	# Call the function `cb` on the value of each node
 	# You may use a recursive or iterative approach
