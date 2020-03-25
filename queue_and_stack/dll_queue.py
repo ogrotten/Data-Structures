@@ -3,25 +3,27 @@ import sys
 from doubly_linked_list import DoublyLinkedList, ListNode
 
 
-dll = DoublyLinkedList()
 
 class Queue:
 	def __init__(self):
+		# dll = DoublyLinkedList()
+		self.dll = DoublyLinkedList()
+
 		self.size = 0
 		# Why is our DLL a good choice to store our elements?
 		# self.storage = ?
 
 	def enqueue(self, value):
-		dll.add_to_tail(value)
-		print(15, value, self.len())
+		self.dll.add_to_tail(value)
+		# print(15, value, self.len())
 		
 	def dequeue(self):
-		j = dll.remove_from_head
-		print(19, j)
-		return
+		j = self.dll.remove_from_head()
+		# print(19, j)
+		return j
 
 	def len(self):
-		return dll.__len__()
+		return self.dll.__len__()
 		
 # f = Queue()
 # f.enqueue(4)
